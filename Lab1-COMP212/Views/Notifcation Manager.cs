@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab1_COMP212.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Lab1_COMP212
 {
     public partial class Form1 : Form
     {
+        ManageSubscription manageSubscription = new ManageSubscription();
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +21,13 @@ namespace Lab1_COMP212
 
         private void button1_Click(object sender, EventArgs e)
         {
+            manageSubscription.Show();
+            this.Hide();
+        }
 
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
