@@ -45,6 +45,7 @@
             // 
             // btnpn
             // 
+            this.btnpn.Enabled = false;
             this.btnpn.Location = new System.Drawing.Point(292, 113);
             this.btnpn.Name = "btnpn";
             this.btnpn.Size = new System.Drawing.Size(183, 55);
@@ -60,6 +61,7 @@
             this.btnexit.TabIndex = 2;
             this.btnexit.Text = "Exit";
             this.btnexit.UseVisualStyleBackColor = true;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // Form1
             // 
@@ -80,6 +82,8 @@
         private System.Windows.Forms.Button btnms;
         private System.Windows.Forms.Button btnpn;
         private System.Windows.Forms.Button btnexit;
+
+        // Hello
     }
 }
 

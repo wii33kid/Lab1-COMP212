@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab1_COMP212.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Lab1_COMP212
 {
@@ -19,7 +21,13 @@ namespace Lab1_COMP212
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Program.manageSub.Show();
+            this.Hide();
+        }
 
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

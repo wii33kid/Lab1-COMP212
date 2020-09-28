@@ -42,6 +42,7 @@
             this.btnpub.TabIndex = 0;
             this.btnpub.Text = "Publish";
             this.btnpub.UseVisualStyleBackColor = true;
+            this.btnpub.Click += new System.EventHandler(this.btnpub_Click);
             // 
             // btnexit2
             // 
@@ -51,6 +52,7 @@
             this.btnexit2.TabIndex = 1;
             this.btnexit2.Text = "Exit";
             this.btnexit2.UseVisualStyleBackColor = true;
+            this.btnexit2.Click += new System.EventHandler(this.btnexit2_Click);
             // 
             // lbl1
             // 
