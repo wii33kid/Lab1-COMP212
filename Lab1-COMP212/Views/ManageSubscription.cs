@@ -19,7 +19,7 @@ namespace Lab1_COMP212.Views
 
         private void chkemail_CheckedChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
