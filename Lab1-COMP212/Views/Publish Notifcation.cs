@@ -21,5 +21,32 @@ namespace Lab1_COMP212.Views
         {
 
         }
+
+        private void btnpub_Click(object sender, EventArgs e)
+        {
+            //using textbox to send to publishMessage variable
+            string publishMessage = this.txtcontent.Text;
+            string message = string.Empty;
+            
+
+            foreach (string subscriber in Subscriber.SubscriberList)
+            {
+                message += $"{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")} - " +
+                    $"The message {publishMessage} has been sent to {subscriber}." +
+          
+                    Environment.NewLine;
+                    /*i think this makes a new line inside the
+                   message box that will appear just incase there are multiple subs.
+                   */
+
+            }
+            //shows the message box :)
+            MessageBox.Show(message);
+        }
+
+        private void btnexit2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
