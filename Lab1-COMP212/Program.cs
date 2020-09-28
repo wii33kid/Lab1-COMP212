@@ -5,6 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+/// <summary>
+/// Created By: Michael Asemota, Hasan Khan, Michael Magtibay, Prince Chauhan
+/// 
+/// This is an application that mimics a notification management system
+/// </summary>
 namespace Lab1_COMP212
 {
     static class Program

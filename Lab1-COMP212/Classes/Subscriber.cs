@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab1_COMP212
 {
-    class Subscriber
+    public class Subscriber
     {
 
         public String Email {get; set;}
