@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Lab1_COMP212
 {
     public partial class Form1 : Form
     {
-        ManageSubscription manageSubscription = new ManageSubscription();
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace Lab1_COMP212
 
         private void button1_Click(object sender, EventArgs e)
         {
-            manageSubscription.Show();
+            Program.manageSub.Show();
             this.Hide();
         }
 

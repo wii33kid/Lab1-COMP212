@@ -29,10 +29,10 @@ namespace Lab1_COMP212.Views
             string message = string.Empty;
             
 
-            foreach (string subscriber in Subscriber.SubscriberList)
+            foreach (Subscriber subscriber in Subscriber.SubscriberList)
             {
                 message += $"{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")} - " +
-                    $"The message {publishMessage} has been sent to {subscriber}." +
+                    $"The message {publishMessage} has been sent to {subscriber.Email} at the number {subscriber.phoneNumber}." +
           
                     Environment.NewLine;
                     /*i think this makes a new line inside the

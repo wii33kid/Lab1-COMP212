@@ -46,6 +46,7 @@
             this.btnsub.TabIndex = 0;
             this.btnsub.Text = "Subscribe";
             this.btnsub.UseVisualStyleBackColor = true;
+            this.btnsub.Click += new System.EventHandler(this.btnsub_Click);
             // 
             // btnun
             // 
@@ -85,9 +86,11 @@
             this.chksms.TabIndex = 4;
             this.chksms.Text = "Notifcation Sent By SMS";
             this.chksms.UseVisualStyleBackColor = true;
+            this.chksms.CheckedChanged += new System.EventHandler(this.chksms_CheckedChanged);
             // 
             // txtemail
             // 
+            this.txtemail.Enabled = false;
             this.txtemail.Location = new System.Drawing.Point(333, 94);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(223, 20);
@@ -95,6 +98,7 @@
             // 
             // txtsms
             // 
+            this.txtsms.Enabled = false;
             this.txtsms.Location = new System.Drawing.Point(333, 194);
             this.txtsms.Name = "txtsms";
             this.txtsms.Size = new System.Drawing.Size(223, 20);

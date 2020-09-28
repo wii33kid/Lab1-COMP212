@@ -12,6 +12,6 @@ namespace Lab1_COMP212
         public String Email {get; set;}
         public int phoneNumber { get; set; }
 
-
+        public static List<Subscriber> SubscriberList = new List<Subscriber>();
     }
 }
