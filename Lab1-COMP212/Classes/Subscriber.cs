@@ -70,5 +70,42 @@ namespace Lab1_COMP212
 
             return this.returnMessage;
         }
+
+        private string SubscribeEmail(string _value, string _value2)
+        {
+            // ** Call SendViaEmail class
+            SendViaEmail _sendViaEmail = new SendViaEmail(_value);
+           
+            switch (_value2.ToLower())
+            {
+                case "subscribe":
+                    this._returnValue = _sendViaEmail.Subscribe(SubscribersList);
+                    if (this._returnValue == 1)
+                    {
+                        this._returnMessage = $"{_value} already exist!";
+                    }
+                    else
+                    {
+                        this._returnMessage = $"Successfully {_value2} {_value}.";
+                    }
+                    break;
+                case "unsubscribe":
+                    this._returnValue = _sendViaEmail.Unsubscribe(SubscribersList);
+                    if (this._returnValue < 0)
+                    {
+                        this._returnMessage = $"{_value} does not exist!";
+                    }
+                    else
+                    {
+                        this._returnMessage = $"Successfully {_value2} {_value}.";
+                    }
+                    break;
+                default:
+                    this._returnMessage = "Unable to process request.";
+                    break;
+            }
+
+            return this._returnMessage;
+        }
     }
 }
