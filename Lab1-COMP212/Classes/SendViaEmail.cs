@@ -17,30 +17,30 @@ namespace Lab1_COMP212.Classes
             this.EmailAddress = emailAddress;
         }
 
-        public int Subscribe(List<string> _subscriberList)
+        public int Subscribe(List<string> subscriberList)
         {
-            bool _checkEmail = _subscriberList.Contains(this.EmailAddress);
+            bool checkEmail = subscriberList.Contains(this.EmailAddress);
             int i = 0;
 
-            if (_checkEmail)
+            if (checkEmail)
             {
                 i = 1;
             }
             else
             {
-                _subscriberList.Add(this.EmailAddress);
+                subscriberList.Add(this.EmailAddress);
             }
 
             return i;            
         }
 
-        public int Unsubscribe(List<string> _subscriberList)
+        public int Unsubscribe(List<string> subscriberList)
         {
-            int i = _subscriberList.IndexOf(this.EmailAddress);
+            int i = subscriberList.IndexOf(this.EmailAddress);
 
             if (i > 0 || i == 0)
             {
-                _subscriberList.RemoveAt(i);
+                subscriberList.RemoveAt(i);
             }
 
             return i;
