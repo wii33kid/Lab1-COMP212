@@ -107,6 +107,7 @@
             // lblinvalid
             // 
             this.lblinvalid.AutoSize = true;
+            this.lblinvalid.ForeColor = System.Drawing.SystemColors.Control;
             this.lblinvalid.Location = new System.Drawing.Point(330, 146);
             this.lblinvalid.Name = "lblinvalid";
             this.lblinvalid.Size = new System.Drawing.Size(107, 13);
