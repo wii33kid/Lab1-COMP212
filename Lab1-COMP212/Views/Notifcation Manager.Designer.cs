@@ -45,13 +45,13 @@
             // 
             // btnpn
             // 
-            this.btnpn.Enabled = false;
             this.btnpn.Location = new System.Drawing.Point(292, 113);
             this.btnpn.Name = "btnpn";
             this.btnpn.Size = new System.Drawing.Size(183, 55);
             this.btnpn.TabIndex = 1;
             this.btnpn.Text = "Publish Notifcation";
             this.btnpn.UseVisualStyleBackColor = true;
+            this.btnpn.Click += new System.EventHandler(this.btnpn_Click);
             // 
             // btnexit
             // 
@@ -73,6 +73,8 @@
             this.Controls.Add(this.btnms);
             this.Name = "Form1";
             this.Text = "Notifcation Manager";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.VisibleChanged += new System.EventHandler(this.Form1_VisibleChanged);
             this.ResumeLayout(false);
 
         }

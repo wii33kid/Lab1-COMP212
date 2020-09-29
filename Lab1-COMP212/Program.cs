@@ -1,4 +1,5 @@
-﻿using Lab1_COMP212.Views;
+﻿using Lab1_COMP212.Classes;
+using Lab1_COMP212.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,9 @@ namespace Lab1_COMP212
         public static Form1 notifManager;
         public static Publish_Notifcation publishNotif;
         public static Subscriber subscriber;
+        public static SendViaEmail email;
+        public static SendViaMobile mobile;
+
 
         /// <summary>
         /// The main entry point for the application.
@@ -33,7 +37,8 @@ namespace Lab1_COMP212
             manageSub = new ManageSubscription();
             notifManager = new Form1();
             publishNotif = new Publish_Notifcation();
-            subscriber = new Subscriber();
+            mobile = new SendViaMobile();
+            email = new SendViaEmail();
 
             Application.Run(notifManager);
         }
