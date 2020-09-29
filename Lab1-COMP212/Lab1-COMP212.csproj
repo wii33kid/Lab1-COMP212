@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\SendViaEmail.cs" />
+    <Compile Include="Classes\SendViaMobile.cs" />
     <Compile Include="Classes\Subscriber.cs" />
     <Compile Include="Views\Notifcation Manager.cs">
       <SubType>Form</SubType>

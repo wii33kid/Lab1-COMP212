@@ -48,7 +48,7 @@ namespace Lab1_COMP212.Views
 
          Subscriber subscriber = new Subscriber();
             subscriber.Email = txtemail.Text;
-            subscriber.phoneNumber = txtsms.Text;
+            subscriber.phoneNumber = long.Parse(txtsms.Text);
          
             Subscriber.SubscriberList.Add(subscriber);
             Program.publishNotif.Show();
