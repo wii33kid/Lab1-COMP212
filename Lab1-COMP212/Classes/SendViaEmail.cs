@@ -8,7 +8,10 @@ namespace Lab1_COMP212.Classes
 {
     class SendViaEmail
     {
-       public String email { get; set; }
-       
+        private string EmailAddress { get; set; }
+        public static List<String> emailList = new List<String>();
+
+
+    
     }
 }

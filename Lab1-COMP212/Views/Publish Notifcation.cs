@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab1_COMP212.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,7 @@ namespace Lab1_COMP212.Views
         private void btnpub_Click(object sender, EventArgs e)
         {
             //using textbox to send to publishMessage variable
-            string publishMessage = this.txtcontent.Text;
+            string publishMessage = txtcontent.Text;
             string message = string.Empty;
 
             del d1 = DelegateMethod1;
@@ -37,17 +38,20 @@ namespace Lab1_COMP212.Views
 
         public static void DelegateMethod1(string message, string publishMessage)
         {
-            foreach (Subscriber subscriber in Subscriber.SubscriberList)
+            foreach (String subscriber in SendViaEmail.emailList)
             {
                 message += $"{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")} - " +
-                    $"The message {publishMessage} has been sent to {subscriber.Email} at the number {subscriber.phoneNumber}." +
-
+                    $"The message {publishMessage} has been sent to {subscriber}" +
                     Environment.NewLine;
-                /*i think this makes a new line inside the
-               message box that will appear just incase there are multiple subs.
-               */
-
             }
+
+            foreach (String subscriber in SendViaMobile.mobileList)
+            {
+                message += $"{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")} - " +
+                    $"The message {publishMessage} has been sent to {subscriber}" +
+                    Environment.NewLine;
+            }
+
             //shows the message box :)
             MessageBox.Show(message);
         }

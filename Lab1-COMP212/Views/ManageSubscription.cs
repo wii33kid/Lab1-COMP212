@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Lab1_COMP212.Classes;
 
 namespace Lab1_COMP212.Views
 {
@@ -46,17 +47,59 @@ namespace Lab1_COMP212.Views
         private void btnsub_Click(object sender, EventArgs e)
         {
 
-            Subscriber subscriber = new Subscriber();
-            subscriber.Email = txtemail.Text;
-            subscriber.phoneNumber = long.Parse(txtsms.Text);
-         
-            Subscriber.SubscriberList.Add(subscriber);
-            Program.publishNotif.Show();
-            this.Hide();
+            SendViaEmail sendViaEmail = new SendViaEmail();
+            SendViaMobile sendViaMobile = new SendViaMobile();
+            int correctSyntax = 0;
+            int expected = 0;
 
-        }        //validation Email & Phone
-       private bool IsValid(string _inputValue, string _value)
-       {
+            if (chkemail.Checked)
+            {
+                expected++;
+            }
+            if (chksms.Checked)
+            {
+                expected++;
+            }
+            //sendViaMobile.mobile = mobile;
+
+            if (chkemail.Checked)
+            {
+                String email = txtemail.Text;
+                if (IsValid(email, "email") && !SendViaEmail.emailList.Contains(email))
+                {
+                    SendViaEmail.emailList.Add(email);
+                    correctSyntax++;
+                }
+                else
+                {
+                    lblinvalid.ForeColor = Color.Red;
+                }
+            }
+            
+
+            if (chksms.Checked)
+            {
+                String mobile = txtsms.Text;
+                if (!SendViaMobile.mobileList.Contains(mobile) && IsValid(mobile, "phone"))
+                {
+                    SendViaMobile.mobileList.Add(mobile);
+                    correctSyntax++;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid phone number");
+                }
+            }
+
+            if (expected.Equals(correctSyntax))
+            {
+                Program.notifManager.Show();
+                this.Hide();
+            }
+        }
+        //validation Email & Phone
+        private bool IsValid(string _inputValue, string _value)
+        {
             bool isValid = true;
 
             switch (_value.ToLower())
@@ -67,10 +110,52 @@ namespace Lab1_COMP212.Views
                     break;
                 case "phone":
                     isValid = Regex.IsMatch(_inputValue,
-                        "^(\\d{3}) \\d{3}-\\d{2}\\d{2}$");
+                        "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$");
                     break;
             }
+
             return isValid;
-       }
+        }
+
+        private void btnun_Click(object sender, EventArgs e)
+        {
+
+            if (chkemail.Checked)
+            {
+                String email = txtemail.Text;
+                if (IsValid(email, "email") && SendViaEmail.emailList.Contains(email))
+                {
+                    SendViaEmail.emailList.Remove(email);
+                    MessageBox.Show("Email removed from list");
+                }
+                else
+                {
+                    lblinvalid.ForeColor = Color.Red;
+                }
+            }
+
+
+            if (chksms.Checked)
+            {
+                String mobile = txtsms.Text;
+                if (SendViaMobile.mobileList.Contains(mobile) && IsValid(mobile, "phone"))
+                {
+                    SendViaMobile.mobileList.Remove(mobile);
+                    MessageBox.Show("Mobile is removed from list");
+                }
+                else
+                {
+                    MessageBox.Show("Invalid phone number");
+                }
+            }
+
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            Program.notifManager.Show();
+            this.Hide();
+        }
     }
+
 }

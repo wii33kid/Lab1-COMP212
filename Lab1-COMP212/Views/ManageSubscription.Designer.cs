@@ -56,6 +56,7 @@
             this.btnun.TabIndex = 1;
             this.btnun.Text = "Unsubscribe";
             this.btnun.UseVisualStyleBackColor = true;
+            this.btnun.Click += new System.EventHandler(this.btnun_Click);
             // 
             // btncancel
             // 
@@ -65,6 +66,7 @@
             this.btncancel.TabIndex = 2;
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // chkemail
             // 

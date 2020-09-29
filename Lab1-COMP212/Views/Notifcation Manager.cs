@@ -45,7 +45,7 @@ namespace Lab1_COMP212
 
         private void Form1_VisibleChanged(object sender, EventArgs e)
         {
-            if (SendViaEmail.emailList.Count.Equals(0) || SendViaMobile.mobileList.Equals(0))
+            if (SendViaEmail.emailList.Count.Equals(0) && SendViaMobile.mobileList.Count.Equals(0))
             {
                 btnpn.Enabled = false;
             }
