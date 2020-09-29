@@ -46,7 +46,7 @@ namespace Lab1_COMP212.Views
         private void btnsub_Click(object sender, EventArgs e)
         {
 
-         Subscriber subscriber = new Subscriber();
+            Subscriber subscriber = new Subscriber();
             subscriber.Email = txtemail.Text;
             subscriber.phoneNumber = long.Parse(txtsms.Text);
          
@@ -55,8 +55,8 @@ namespace Lab1_COMP212.Views
             this.Hide();
 
         }        //validation Email & Phone
-             private bool IsValid(string _inputValue, string _value)
-        {
+       private bool IsValid(string _inputValue, string _value)
+       {
             bool isValid = true;
 
             switch (_value.ToLower())
@@ -70,9 +70,7 @@ namespace Lab1_COMP212.Views
                         "^(\\d{3}) \\d{3}-\\d{2}\\d{2}$");
                     break;
             }
-
             return isValid;
-        }
+       }
     }
-       
 }
