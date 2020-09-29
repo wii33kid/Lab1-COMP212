@@ -79,7 +79,7 @@ namespace Lab1_COMP212
             switch (value2.ToLower())
             {
                 case "subscribe":
-                    this.returnValue = sendViaEmail.Subscribe(SubscribersList);
+                    this.returnValue = sendViaEmail.Subscribe(SubscriberList);
                     if (this.returnValue == 1)
                     {
                         this.returnMessage = $"{value} already exist!";
@@ -90,7 +90,7 @@ namespace Lab1_COMP212
                     }
                     break;
                 case "unsubscribe":
-                    this.returnValue = sendViaEmail.Unsubscribe(SubscribersList);
+                    this.returnValue = sendViaEmail.Unsubscribe(SubscriberList);
                     if (this.returnValue < 0)
                     {
                         this.returnMessage = $"{value} does not exist!";
